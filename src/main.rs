@@ -24,6 +24,9 @@ enum WorkloadKind {
     A,
     B,
     C,
+    D,
+    E,
+    F,
     All,
 }
 
@@ -86,12 +89,36 @@ fn selected_workloads(kind: WorkloadKind) -> Vec<YcsbWorkload> {
         insertprop: 0.0,
         scanprop: 0.0,
     };
+    let d = YcsbWorkload {
+        name: "workloadd",
+        readprop: 0.75,
+        updateprop: 0.20,
+        insertprop: 0.05,
+        scanprop: 0.0,
+    };
+    let e = YcsbWorkload {
+        name: "workloade",
+        readprop: 0.55,
+        updateprop: 0.0,
+        insertprop: 0.0,
+        scanprop: 0.45,
+    };
+    let f = YcsbWorkload {
+        name: "workloadf",
+        readprop: 0.25,
+        updateprop: 0.25,
+        insertprop: 0.25,
+        scanprop: 0.25,
+    };
 
     match kind {
         WorkloadKind::A => vec![a],
         WorkloadKind::B => vec![b],
         WorkloadKind::C => vec![c],
-        WorkloadKind::All => vec![a, b, c],
+        WorkloadKind::D => vec![d],
+        WorkloadKind::E => vec![e],
+        WorkloadKind::F => vec![f],
+        WorkloadKind::All => vec![a, b, c, d, e, f],
     }
 }
 
