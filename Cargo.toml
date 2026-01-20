@@ -1,0 +1,10 @@
+[package]
+name = "dashmap_ycsb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dashmap = "5.5.3"
+rand = { version = "0.8", features = ["std"] }
+rand_distr = "0.4"
+clap = { version = "4", features = ["derive"] }
